@@ -4,7 +4,7 @@ import {Trash2} from "lucide-react";
 import {PencilLine } from "lucide-react";
 import {FolderPlus} from "lucide-react";
 import { FolderKanban } from 'lucide-react';
-import SidebarMenu from './sidebarmenu';
+import SidebarMenu from '@/components/ui/sidebarmenu';
 
 const Emprestimo = () => {
 
@@ -53,7 +53,7 @@ const Emprestimo = () => {
 
 	return(
 		<div className="flex items-center justify-center w-full h-full">
-		
+            	<SidebarMenu/>
 			<div className="w-[1300px] h-[500px] bg-black rounded-[5px] border-2 border-white">
 				<div className="w-full flex items-center justify-between p-[20px] px-[40px] bg-black to-sky-200 rounded-t-md mb-[10px]">
 					<div>

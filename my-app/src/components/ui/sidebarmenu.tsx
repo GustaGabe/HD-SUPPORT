@@ -14,7 +14,27 @@ interface Option{
     path: string;
 }
 
+import { motion } from 'framer-motion';
+
+
+
 const SidebarMenu: React.FC = () => {
+
+
+const handleEmprestimo = () =>{
+    router.push("/emprestimo")
+}
+
+const handleFuncionario = () =>{
+    router.push("/funcionario")
+}
+const handleEquipamento = () =>{
+    router.push("/equipamento")
+}
+    const [mostrarOpcoes, setMostrarOpcoes] = useState(false);
+    const toggleOpcoes = () => {
+        setMostrarOpcoes(!mostrarOpcoes);
+      };
 
     const [darkMode, setDarkMode] = useState(false)
     const toggleDarkMode = () => { 
@@ -55,11 +75,6 @@ const SidebarMenu: React.FC = () => {
             title: 'Gráficos',
             svg: IconChart,
             path: '/graficos',
-        },
-        {
-            title: 'Tabelas',
-            svg: IconTable,
-            path: '/tabelas',
         },
         {
             title: 'Chamados',
@@ -117,6 +132,34 @@ const SidebarMenu: React.FC = () => {
                     {option.map((item) => (
                         <Optionside  key={item.title} title={item.title} svg={item.svg} path={item.path} />
                     ))}
+
+<div className="flex dark:border-black cursor-pointer space-x-3 mt-3 w-[full] border-2 justify-center rounded-[10px] items-center border-slate-50 text-white p-[10px]">
+                            <IconTable/>
+                            <button className="text-white  dark:text-black w-[100px] font-bold" onClick={toggleOpcoes}>Tabela</button>
+                        </div>
+                       <motion.div
+                        initial={{ opacity: 0, y: -20 }} // Define o estado inicial da animação
+                        animate={{ opacity: mostrarOpcoes ? 1 : 0, y: mostrarOpcoes ? 0 : -20 }} // Define o estado de animação atual
+                        transition={{ duration: 0.3 }} // Define a duração da transição da animação
+                       >
+                       {mostrarOpcoes && (
+                                 <div className="flex justify-center items-center flex-col">
+                            <div className="flex dark:border-black cursor-pointer  space-x-3  w-4/5 border-2 justify-center rounded-[10px] items-center border-slate-50 text-white p-[15px]">
+                            
+                                <button onClick={handleEmprestimo} className="text-white  dark:text-black w-[100px] font-bold">Empréstimo</button>
+                            </div>
+                            <div className="flex dark:border-black cursor-pointer w-4/5   space-x-3 mt-3  border-2 justify-center rounded-[10px] items-center border-slate-50 text-white p-[15px]">
+                            
+                                <button onClick={handleEquipamento} className="text-white  dark:text-black text-sm font-bold">Equipamento</button>
+                            </div>
+                            <div className="flex dark:border-black cursor-pointer w-4/5   space-x-3 mt-3  border-2 justify-center rounded-[10px] items-center border-slate-50 text-white p-[15px]">
+                            
+                                <button onClick={handleFuncionario} className="text-white  dark:text-black w-[100px] font-bold">Funcionário</button>
+                            </div>
+                            
+                            </div>
+                        )}
+                       </motion.div>
                 </div>
             </div>
             <div className="flex justify-between  w-full relative top-4">
