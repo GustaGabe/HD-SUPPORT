@@ -143,16 +143,16 @@ const handleEquipamento = () =>{
                         transition={{ duration: 0.3 }} // Define a duração da transição da animação
                        >
                        {mostrarOpcoes && (
-                                 <div className="flex justify-center items-center flex-col">
-                            <div className="flex dark:border-black cursor-pointer  space-x-3  w-4/5 border-2 justify-center rounded-[10px] items-center border-slate-50 text-white p-[15px]">
+                                 <div className="flex justify-center border-2  darK:border-black rounded items-center flex-col">
+                            <div className="flex  cursor-pointer  space-x-3  w-4/5 justify-center rounded-[10px] items-center  text-white p-[15px]">
                             
                                 <button onClick={handleEmprestimo} className="text-white  dark:text-black w-[100px] font-bold">Empréstimo</button>
                             </div>
-                            <div className="flex dark:border-black cursor-pointer w-4/5   space-x-3 mt-3  border-2 justify-center rounded-[10px] items-center border-slate-50 text-white p-[15px]">
+                            <div className="flex cursor-pointer w-4/5   space-x-3 mt-3   justify-center rounded-[10px] items-center  text-white p-[15px]">
                             
                                 <button onClick={handleEquipamento} className="text-white  dark:text-black text-sm font-bold">Equipamento</button>
                             </div>
-                            <div className="flex dark:border-black cursor-pointer w-4/5   space-x-3 mt-3  border-2 justify-center rounded-[10px] items-center border-slate-50 text-white p-[15px]">
+                            <div className="flex  cursor-pointer w-4/5   space-x-3 mt-3   justify-center rounded-[10px] items-center  text-white p-[15px]">
                             
                                 <button onClick={handleFuncionario} className="text-white  dark:text-black w-[100px] font-bold">Funcionário</button>
                             </div>
